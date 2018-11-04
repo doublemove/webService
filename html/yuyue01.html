@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head><title>预约</title></head>
+    <body>
+        <h1>请选择就诊日期（明后两天）和预约部门</h1>
+        <form method="post" action="/yuyue02">
+        <p>就诊日期<br><input type="date" name = "date" required></p>
+        <p>
+        预约部门<br>
+        <select name="department">
+        <option value="neike">内科</option>
+        <option value="waike">外科</option>
+        </select>
+        </p>
+        <input type="submit" value="预约">
+        </form>
+    </body>
+</html>

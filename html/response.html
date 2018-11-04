@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head><title>提示</title></head>
+    <body>
+        {% if type == 'yuyue' %}
+            {% if geshi_flag and shouji_flag %}
+                <h3>恭喜您预约成功！</h3>
+            {% elif geshi_flag == 0 %}
+                <h3>手机号码格式有误，请输入正确的手机号码！</h3>
+            {% elif shouji_flag == 0 %}
+                <h3>该号码已预约，请输入未预约的手机号码！</h3>
+            {% end %}
+        {% elif type == 'quxiaoyuyue' %}
+            {% if geshi_flag and shouji_flag %}
+                <h3>恭喜您取消预约成功！</h3>
+            {% elif geshi_flag == 0 %}
+                <h3>手机号码格式有误，请输入正确的手机号码！</h3>
+            {% elif shouji_flag == 0 %}
+                <h3>该号码未预约，请输入已预约的手机号码！</h3>
+            {% end %}
+        
+        {% end %}
+        
+        <button onclick="javascript:history.back();">返回上一页</button>
+        <button onclick="window.location.href='/'">返回主页</button>
+    </body>
+</html>

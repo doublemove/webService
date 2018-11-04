@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head><title>提示</title></head>
+    <body>
+        {% if time_flag and department_flag%}
+            <h1>请输入要预约的手机号码</h1>
+            <form method="post" action="/response">
+            <input type="text" name="type" value="yuyue" hidden>
+            <input type="text" name="department" value={{ department }} hidden>
+            <p>手机号码<br><input type="number" name = "shouji" required></p>
+            <input type="submit" value="预约">
+            </form>
+        {% elif time_flag == 0 %}
+            <h3>预约时间有误，请选择明后两天的预约时间！</h3>
+            <button onclick="javascript:history.back();">返回上一页</button>
+            <button onclick="window.location.href='/'">返回主页</button>
+        {% elif department_flag == 0 %}
+            <h3>该部门预约人数已满，请稍后再试！</h3>
+            <button onclick="javascript:history.back();">返回上一页</button>
+            <button onclick="window.location.href='/'">返回主页</button>
+        {% end %}
+        
+    </body>
+</html>
